@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"BrowserMethods",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"BrowserMethods",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

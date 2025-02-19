@@ -1,0 +1,1 @@
+if (on_click != -1) on_click();
