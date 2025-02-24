@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_dice",
-    "path":"sprites/spr_dice/spr_dice.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

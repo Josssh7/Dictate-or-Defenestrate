@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_blank",
-    "path":"sprites/spr_blank/spr_blank.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

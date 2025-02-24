@@ -30,10 +30,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_manifesto",
-    "path":"sprites/spr_manifesto/spr_manifesto.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

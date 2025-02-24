@@ -32,10 +32,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_arrow",
-    "path":"sprites/spr_arrow/spr_arrow.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_suit_angled",
-    "path":"sprites/spr_suit_angled/spr_suit_angled.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

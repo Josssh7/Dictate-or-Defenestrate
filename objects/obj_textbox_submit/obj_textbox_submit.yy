@@ -35,10 +35,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_textbox_submit",
-    "path":"sprites/spr_textbox_submit/spr_textbox_submit.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

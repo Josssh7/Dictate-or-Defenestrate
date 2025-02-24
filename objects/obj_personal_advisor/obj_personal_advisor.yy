@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_suit_straight",
-    "path":"sprites/spr_suit_straight/spr_suit_straight.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
