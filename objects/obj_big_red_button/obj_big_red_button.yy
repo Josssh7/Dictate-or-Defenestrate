@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_big_red_button",
+    "path":"sprites/spr_big_red_button/spr_big_red_button.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_scale",
+    "path":"sprites/spr_scale/spr_scale.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
