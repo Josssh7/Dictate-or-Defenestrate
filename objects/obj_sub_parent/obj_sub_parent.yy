@@ -1,7 +1,10 @@
 {
   "$GMObject":"",
   "%Name":"obj_sub_parent",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_sub_parent",
   "overriddenProperties":[],
@@ -9,7 +12,10 @@
     "name":"subordinate_objects",
     "path":"folders/Objects/meeting_room_objects/subordinate_objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_outline",
+    "path":"objects/obj_outline/obj_outline.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

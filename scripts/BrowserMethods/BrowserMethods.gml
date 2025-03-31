@@ -13,10 +13,16 @@ function calibrate_window_y() {
 	else return 1;
 }
 
+function get_mouse_x() { return mouse_x * calibrate_window_x() };
+
+function get_mouse_y() { return mouse_y * calibrate_window_y() };
+
 ///@desc See if mouse is hovering (mapped to different browser window sizes)
 function get_hover(_obj) {
-	var _x = mouse_x * calibrate_window_x();
-	var _y = mouse_y * calibrate_window_y();
+	//var _x = mouse_x * calibrate_window_x();
+	//var _y = mouse_y * calibrate_window_y();
+	var _x = mouse_x;
+	var _y = mouse_y;
 
 	return position_meeting(_x, _y, _obj);
 }

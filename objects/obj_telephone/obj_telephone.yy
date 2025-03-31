@@ -10,8 +10,8 @@
     "path":"folders/Objects/meeting_room_objects/item_objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_hover",
-    "path":"objects/obj_hover/obj_hover.yy",
+    "name":"obj_outline",
+    "path":"objects/obj_outline/obj_outline.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

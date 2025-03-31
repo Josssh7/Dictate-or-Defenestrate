@@ -1,16 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_hover",
+  "%Name":"obj_outline",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_hover",
+  "name":"obj_outline",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"other_objects",
+    "path":"folders/Objects/other_objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

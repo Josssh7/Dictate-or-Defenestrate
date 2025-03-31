@@ -1,7 +1,9 @@
 {
   "$GMObject":"",
   "%Name":"obj_commander",
-  "eventList":[],
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
   "name":"obj_commander",
   "overriddenProperties":[],
@@ -9,7 +11,10 @@
     "name":"subordinate_objects",
     "path":"folders/Objects/meeting_room_objects/subordinate_objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_sub_parent",
+    "path":"objects/obj_sub_parent/obj_sub_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -27,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_suit_angled",
+    "path":"sprites/spr_suit_angled/spr_suit_angled.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

@@ -7,13 +7,31 @@
 function SubList(_adv, _man, _prp, _trs, _com) constructor {
 	personal_advisor = _adv;
 	appearance_manager = _man;
-	propagana_minister = _prp;
+	propaganda_minister = _prp;
 	treasurer = _trs;
 	commander = _com;
 }
 
 #macro FULLSUBS new SubList(true, true, true, true, true)
 
+//Declaring globals
+global.calendar = [];
+global.day = 0;
+global.months = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December",
+	"The End of Days"
+]
 
 ///@desc Information for any given day
 ///@param {real} _day Day (1-37)
@@ -29,27 +47,27 @@ function Date(_day, _month, _year, _subs, _event) constructor {
 	event = _event;
 }
 
-global.calendar = [];
-global.day = 0;
+///@desc Formats date to be displayed 
+///@param {Struct} _date Date struct
+function format_date(_date) {
+	var _suffix = "th";
+	switch (_date.day mod 10) {
+		case 1:
+			_suffix = "st";
+		break;
+		case 2:
+			_suffix = "nd";
+		break;
+		case 3:
+			_suffix = "rd";
+		break;
+	}
+	return string(_date.day) + _suffix + " of " + global.months[_date.month] + " " + string(_date.year);
+}
 
 //Generate days
 var _day = 28;
 var _month = 10; //November
-months = [
-	"January",
-	"February",
-	"March",
-	"April",
-	"May",
-	"June",
-	"July",
-	"August",
-	"September",
-	"October",
-	"November",
-	"December",
-	"End of Days"
-]
 var _year = 1983;
 var _empty = function() {} //Later have separate script for event methods
 
@@ -61,7 +79,7 @@ for (var i = 0; i < 100; i++) {
 			_month = 0;
 			_year++;
 		}
-		else month++;
+		else _month++;
 	}
 	else _day++;
 	

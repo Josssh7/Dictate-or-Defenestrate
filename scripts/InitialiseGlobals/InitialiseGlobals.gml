@@ -1,4 +1,3 @@
-//Later this becomes new game code, otherwise get from load save data
 function initialise_globals() {
 	global.name = "";
 	global.party = "";
@@ -14,6 +13,4 @@ function initialise_globals() {
 
 	global.start_skill = 10;
 	global.subs = initialise_subs();
-
-	global.day = 1;
 }
