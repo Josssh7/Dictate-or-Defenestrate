@@ -3,7 +3,7 @@
 #macro CRIMSON make_color_rgb(163, 22, 33)
 #macro DARK_PURPLE make_color_rgb(42, 31, 45)
 #macro TEXT_GRAY make_color_rgb(200, 200, 200)
-#macro LOVE_PINK make_color_rbg(255, 185, 207)
+#macro LOVE_PINK make_color_rbg(255, 102, 204)
 
 if os_browser == browser_not_a_browser
    {

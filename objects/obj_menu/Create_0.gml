@@ -25,7 +25,9 @@ max_width = 350;
 height = 0;
 full_height = 0;
 
-///@desc my own creation :)
+options_buffer = 10;
+options_height = 0;
+
 function draw_gauge(_x, _y, _val) {
 	var _bottom = 3.25
 	//Background

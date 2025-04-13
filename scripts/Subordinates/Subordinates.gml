@@ -16,6 +16,10 @@ global.names = [
 	"Lars",
 	"Ayden",
 	"Daniel",
+	"Alex",
+	"Peter",
+	"Casper",
+	"Linda",
 ]
 
 global.hobbies = [
@@ -51,6 +55,7 @@ global.hobbies = [
 	"Parkour",
 	"People Watching",
 	"Amateur Geology",
+	"Metallurgy",
 ]
 
 global.media = [
@@ -72,6 +77,7 @@ global.media = [
 	"Never Let Me Go",
 	"A Clockwork Orange",
 	"Slaugherhouse-Five",
+	"Zelda & Chill",
 ]
 
 global.ideas = [ //democracy maybe impact gameplay
@@ -128,6 +134,7 @@ function Subordinate(_role) constructor
 	name = global.names[irandom(array_length(global.names)-1)];
 	sprite = select_sub_sprite();
 	role = _role;
+	activity = get_sub_activity(_role);
 	skill = global.start_skill;
 	joined = global.calendar[global.day]; //Format when being used
 	likes = [
@@ -137,9 +144,9 @@ function Subordinate(_role) constructor
 			];
 	popularity = irandom(100);
 	trust = 40;
-	trust_rate = 2;
+	trust_rate = 3;
 	fear = 50;
-	fear_rate = -2;
+	fear_rate = -3;
 	locked = false;
 }
 
@@ -147,19 +154,45 @@ function initialise_subs() {
 	return {
 		personal_advisor: new Subordinate("Personal Advisor"), //Is this the best way to do this?
 		appearance_manager: new Subordinate("Public Appearance Manager"),
-		propagana_minister: new Subordinate("Propaganda Minister"),
+		propaganda_minister: new Subordinate("Propaganda Minister"),
 		treasurer: new Subordinate("Treasurer"),
 		commander: new Subordinate("Commander-in-chief"),
 	}
 }
 
-///@param {struct} _sub Subordinate instantiated from Subordinate() struct
-function update_sub(_sub)
-{	
-	with _sub {
-		if (irandom(1) == 1) skill = min(skill+1, 50);
-		trust = clamp(trust+trust_rate, 0, 100);
-		if (trust > 90 and !locked) locked = true; //Fear is null now but idk how
-		fear = clamp(fear+fear_rate, 0, 100);
+///@param {string} _key Key to access subordinate from subs struct
+function update_sub(_key) {	
+	if (irandom(1) == 1) global.subs[$ _key].skill = min(global.subs[$ _key].skill+1, 50);
+	increase_sub_trust(_key, global.subs[$ _key].trust_rate);
+	increase_sub_fear(_key, global.subs[$ _key].fear_rate);
+}
+
+function get_sub_activity(_role) {
+	switch (_role) {
+		case "Personal Advisor": 
+			return new MenuOption("Consolidate Power", show_message("Consolidate Power"));
+		case "Public Appearance Manager": 
+			return new MenuOption("Public Speech", show_message("Consolidate Power"));
+		case "Propaganda Minister": 
+			return new MenuOption("Censor Media", show_message("Censor Media"));
+		case "Treasurer": 
+			return new MenuOption("Manage Investments", show_message("Manage Investments"));
+		case "Commander-in-chief": 
+			return new MenuOption("Diplomacy", show_message("Diplomacy"));
 	}
+}
+
+function increase_sub_trust(_key, _val) {
+	with global.subs[$ _key] {
+		if (locked) trust = clamp(trust+_val, trust, 100); //Can't decrease when locked
+		else trust = clamp(trust+_val, 0, 100);
+		if (trust > 90 and !locked) _locked = true;
+	}
+}
+
+function increase_sub_fear(_key, _val) { global.subs[$ _key].fear = clamp(global.subs[$ _key].fear+_val, 0, 100) }
+
+function kill_sub(_key) { //Might be easier to destroy instance from respective function
+	global.subs[$ _key] = noone;
+	global.calendar[global.day+1].subs[$ _key] = false;
 }

@@ -6,11 +6,17 @@ function MenuItem(_name, _info) constructor {
 	info = _info;
 }
 
-function create_menu(_x, _y, _items, _gauges, _description = -1, _dir = 1) {
+function MenuOption(_name, _onclick) constructor {
+	name = _name;
+	onclick = _onclick;
+}
+
+function create_menu(_x, _y, _items, _gauges, _options, _description = -1, _dir = 1) {
 	var _menu = instance_create_depth(_x, _y, -999, obj_menu);
 	with (_menu) { 
 		items = _items;
 		gauges = _gauges;
+		options = _options;
 		description = _description;
 		dir = _dir;
 		if (dir == 1) x += 175;
@@ -90,4 +96,23 @@ function split_string_by_width(_array, _max_width, _scale = 1) {
     }
 
     return new_array;
+}
+
+function close_menu(_inst) {
+	with (_inst) {	
+		menu_open = false; //Important for pressing escape key
+		obj_camera_zoom.reset_target();
+		if (menu != noone) {
+			instance_destroy(menu);
+			menu = noone;
+		}
+	}
+}
+
+function close_other_menus(_id) {
+	var _ids = array_concat(layer_get_all_elements("Subordinates"), layer_get_all_elements("Items"));
+		for (var i = 0; i < array_length(_ids); i++) {
+			var _inst = layer_instance_get_instance(_ids[i]);
+			if (_inst.menu_open and _inst != _id) close_menu(_inst); //dont want to destroy any menu (other non-sub objects might have menus)
+		}
 }

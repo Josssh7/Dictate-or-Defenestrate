@@ -1,19 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_telephone",
+  "%Name":"obj_item_parent",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_telephone",
+  "name":"obj_item_parent",
   "overriddenProperties":[],
   "parent":{
     "name":"item_objects",
     "path":"folders/Objects/meeting_room_objects/item_objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_item_parent",
-    "path":"objects/obj_item_parent/obj_item_parent.yy",
+    "name":"obj_clickable",
+    "path":"objects/obj_clickable/obj_clickable.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -32,10 +33,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_telephone",
-    "path":"sprites/spr_telephone/spr_telephone.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

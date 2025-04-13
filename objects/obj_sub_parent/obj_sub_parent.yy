@@ -13,8 +13,8 @@
     "path":"folders/Objects/meeting_room_objects/subordinate_objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_outline",
-    "path":"objects/obj_outline/obj_outline.yy",
+    "name":"obj_clickable",
+    "path":"objects/obj_clickable/obj_clickable.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

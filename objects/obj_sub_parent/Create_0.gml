@@ -1,18 +1,17 @@
 event_inherited();
 
 relative_pos = "";
-menu_open = false;
-menu = noone;
+key = "";
 
 overlap = function() {
-	var _ids = layer_get_all_elements("Instances");
+	var _ids = layer_get_all_elements("Items");
 	for (var i = 0; i < array_length(_ids); i++) {
 		if (get_hover(layer_instance_get_instance(_ids[i]))) { return true };
 	}
 	return false;
 }
 
-get_details = function(){ return {} };
+get_details = function(){ return global.subs[$ key] };
 
 function display_details() {
 	var _details = get_details();
@@ -23,14 +22,5 @@ function display_details() {
 		new MenuItem("Likes", _details.likes), //argument is an array just for this one fucking feature
 		new MenuItem("Popularity", [string(_details.popularity) + "%"]),
 		new MenuItem("Status", ["ADD LATER"]),
-	], {trust: _details.trust, fear: _details.fear}, _details.name, _dir);
-}
-
-function close_details() {
-	menu_open = false; //Important for pressing escape key
-	obj_camera_zoom.reset_target();
-	if (menu != noone) {
-		instance_destroy(menu);
-		menu = noone;
-	}
+	], {trust: _details.trust, fear: _details.fear}, _details.activity, _details.name, _dir);
 }
