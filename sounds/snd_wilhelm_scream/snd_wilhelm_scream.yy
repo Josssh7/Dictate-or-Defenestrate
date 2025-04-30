@@ -12,8 +12,8 @@
   "duration":1.116848,
   "name":"snd_wilhelm_scream",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"meeting_room_sfx",
+    "path":"folders/Sounds/meeting_room_sfx.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

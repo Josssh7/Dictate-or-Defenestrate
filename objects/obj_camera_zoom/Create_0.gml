@@ -1,4 +1,3 @@
-///@desc 
 camera = view_camera[0];
 zoom_spd = 0.2;
 zoom_scale = 0.4;

@@ -1,21 +1,14 @@
-hover = 0;
-mouse_over = false;
-mx_prev = get_mouse_x();
-my_prev = get_mouse_y();
-
-scale = 0.2;
-margin = 12;
-line_height = 28;
-
-gauge_offset = 20;
-gauge_width = 15;
-icon_offset = 16;
+scale = 0.15;
+margin = 70 * scale;
+line_height = 140 * scale;
 
 items = [];
 gauges = {};
+options = [];
 description = undefined;
 items_count = 0;
-//hover_marker = "* ";
+
+#macro HOVER_MARKER "* "
 #macro COLON ": "
 #macro LVL "LVL "
 
@@ -25,8 +18,17 @@ max_width = 350;
 height = 0;
 full_height = 0;
 
+gauge_offset = 20;
+gauge_width = 15;
+icon_offset = 16;
+
 options_buffer = 10;
 options_height = 0;
+
+hover = 0;
+mouse_over = false;
+mx_prev = device_mouse_x_to_gui(0);
+my_prev = device_mouse_y_to_gui(0);
 
 function draw_gauge(_x, _y, _val) {
 	var _bottom = 3.25

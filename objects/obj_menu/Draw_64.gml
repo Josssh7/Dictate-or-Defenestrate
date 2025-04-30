@@ -29,7 +29,7 @@ else if (dir == -1) {//To the left, if no gauge we probably need another paramet
 }
 
 
-//Draw Text
+//Draw Main Text
 draw_set_font(fnt_menu);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
@@ -38,7 +38,7 @@ var _desc = (description != -1); //Bool check if there is a description
 var _lines = 0;
 for (var i = 0; i < (items_count + _desc); i++) {
 	draw_set_color(c_white); //So individual changes don't impact others
-	if (i==0 and _desc) {
+	if (i == 0 and _desc) {
 		draw_set_color(CADET_GRAY);
 		draw_text_transformed(x, y, description, scale, scale, 0);
 		_lines++;
@@ -57,4 +57,18 @@ for (var i = 0; i < (items_count + _desc); i++) {
 			}
 		}
 	}
+}
+	
+//Draw Options Background
+draw_sprite_stretched(spr_textbox, 0, x-margin, y-margin+full_height+options_buffer, full_width, options_height);
+
+//Draw Options Text
+for (var l = 0; l < options_count; l++) {
+	draw_set_color(c_white);
+	var _str = options[l].name;
+	if (hover == l) {
+		draw_set_color(AMBER);
+		_str = HOVER_MARKER + _str;
+	}
+	draw_text_transformed(x, y+(l*line_height)+full_height+options_buffer, _str, scale, scale, 0);
 }

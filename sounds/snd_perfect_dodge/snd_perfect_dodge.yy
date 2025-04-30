@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_perfect_dodge",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.344966,
+  "name":"snd_perfect_dodge",
+  "parent":{
+    "name":"speech_sfx",
+    "path":"folders/Sounds/speech_sfx.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_perfect_dodge.wav",
+  "type":0,
+  "volume":1.0,
+}

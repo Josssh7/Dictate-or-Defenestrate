@@ -1,26 +1,5 @@
-//Returns ratio for different window sizes in browser
-function calibrate_window_x() {
-	if(os_browser != browser_not_a_browser) {
-	  return room_width / window_get_width();
-	}
-	else return 1;
-}
-
-function calibrate_window_y() {
-	if (os_browser != browser_not_a_browser) {
-		return room_height / window_get_height();
-	}
-	else return 1;
-}
-
-function get_mouse_x() { return mouse_x * calibrate_window_x() };
-
-function get_mouse_y() { return mouse_y * calibrate_window_y() };
-
 ///@desc See if mouse is hovering (mapped to different browser window sizes)
 function get_hover(_obj) {
-	//var _x = mouse_x * calibrate_window_x();
-	//var _y = mouse_y * calibrate_window_y();
 	var _x = mouse_x;
 	var _y = mouse_y;
 

@@ -3,6 +3,15 @@ event_inherited();
 relative_pos = "";
 key = "";
 
+get_details = function(){ return global.subs[$ key] };
+
+report = noone;
+report_text = function() { 
+	var _details = get_details();
+	//Will be on specific resources later once I add them :)
+	return ["I wish I was doing " + string_lower(_details.likes[0]) + " right now."];
+}
+
 overlap = function() {
 	var _ids = layer_get_all_elements("Items");
 	for (var i = 0; i < array_length(_ids); i++) {
@@ -10,8 +19,6 @@ overlap = function() {
 	}
 	return false;
 }
-
-get_details = function(){ return global.subs[$ key] };
 
 function display_details() {
 	var _details = get_details();
@@ -22,5 +29,11 @@ function display_details() {
 		new MenuItem("Likes", _details.likes), //argument is an array just for this one fucking feature
 		new MenuItem("Popularity", [string(_details.popularity) + "%"]),
 		new MenuItem("Status", ["ADD LATER"]),
-	], {trust: _details.trust, fear: _details.fear}, _details.activity, _details.name, _dir);
+	], {trust: _details.trust, fear: _details.fear}, [new MenuOption("Get Report", display_report), _details.activity], _details.name, _dir);
+}
+
+function display_report() {
+	var _details = get_details();
+	report = create_report(275, 100, _details.name, report_text(), menu);
+	instance_deactivate_object(menu);
 }

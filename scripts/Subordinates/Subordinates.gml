@@ -170,15 +170,15 @@ function update_sub(_key) {
 function get_sub_activity(_role) {
 	switch (_role) {
 		case "Personal Advisor": 
-			return new MenuOption("Consolidate Power", show_message("Consolidate Power"));
+			return new MenuOption("Consolidate Power", undefined);
 		case "Public Appearance Manager": 
-			return new MenuOption("Public Speech", show_message("Consolidate Power"));
+			return new MenuOption("Public Speech", undefined);
 		case "Propaganda Minister": 
-			return new MenuOption("Censor Media", show_message("Censor Media"));
+			return new MenuOption("Censor Media", undefined);
 		case "Treasurer": 
-			return new MenuOption("Manage Investments", show_message("Manage Investments"));
+			return new MenuOption("Manage Investments", undefined);
 		case "Commander-in-chief": 
-			return new MenuOption("Diplomacy", show_message("Diplomacy"));
+			return new MenuOption("Diplomacy", undefined);
 	}
 }
 

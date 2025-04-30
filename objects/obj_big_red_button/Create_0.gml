@@ -1,7 +1,7 @@
 event_inherited();
 
 scream_countdown = -1;
-scream_buffer = 30;
+scream_buffer = 40;
 
 fade_alpha = 0;
 global.fading = false;

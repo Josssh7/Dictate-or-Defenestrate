@@ -12,8 +12,8 @@
   "duration":2.04,
   "name":"snd_window_shatter",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"meeting_room_sfx",
+    "path":"folders/Sounds/meeting_room_sfx.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

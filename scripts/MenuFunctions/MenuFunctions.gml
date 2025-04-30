@@ -11,6 +11,11 @@ function MenuOption(_name, _onclick) constructor {
 	onclick = _onclick;
 }
 
+function SelectOption(_info, _onclick) constructor {
+	info = _info;
+	onclick = _onclick;
+}
+
 function create_menu(_x, _y, _items, _gauges, _options, _description = -1, _dir = 1) {
 	var _menu = instance_create_depth(_x, _y, -999, obj_menu);
 	with (_menu) { 
@@ -21,9 +26,11 @@ function create_menu(_x, _y, _items, _gauges, _options, _description = -1, _dir 
 		dir = _dir;
 		if (dir == 1) x += 175;
 		items_count = array_length(_items);
+		options_count = array_length(_options);
 		info_count = 0; //Extra info bits to add to height
 		
 		//Sets width as longest string
+		//DO NOT LET OPTIONS BE LONGER THAN MAIN/MAX
 		width = 1;
 		draw_set_font(fnt_menu); //For string_width measurements
 		if (_description != -1) width = max(width, scale * string_width(_description));
@@ -42,6 +49,7 @@ function create_menu(_x, _y, _items, _gauges, _options, _description = -1, _dir 
 
 		width = min(width, max_width);
 		height = line_height * (items_count + (_description != -1) + info_count); //+1 if desc, + amount of extra info bits
+		options_height = (line_height * options_count) + (margin * 2);
 		
 		full_width = width + (margin * 2);
 		full_height = height + (margin * 2);
@@ -115,4 +123,64 @@ function close_other_menus(_id) {
 			var _inst = layer_instance_get_instance(_ids[i]);
 			if (_inst.menu_open and _inst != _id) close_menu(_inst); //dont want to destroy any menu (other non-sub objects might have menus)
 		}
+}
+
+function create_report(_x, _y, _name, _text, _previous_menu = noone) {
+	var _report = instance_create_depth(_x, _y, -999, obj_report);
+	with (_report) {
+		name = _name;
+		previous_menu = _previous_menu;
+		
+		draw_set_font(fnt_menu);
+		width = max(width, scale * string_width(_name));
+		
+		var _max = 0;
+		text = split_string_by_width(_text, max_width, scale);
+		for (var i = 0; i < array_length(text); i++) {
+			_max = max(_max, string_width(text[i]));
+			line_count++;
+		}
+
+		width = max(width, (scale * _max) + indent);
+		width = min(width, max_width);
+		height = line_height * line_count;
+		
+		full_width = width + (margin * 2);
+		full_height = height + (margin * 2);
+	}
+}
+
+function create_select_menu(_x, _y, _options, _scale, _pivot = "left", _description = "") {
+	var _menu = instance_create_depth(_x, _y, -999, obj_select);
+	with (_menu) {
+		options = _options;
+		scale = _scale;
+		margin *= scale;
+		line_height *= scale;
+		description = _description;
+		
+		draw_set_font(fnt_menu);
+		if (description != "") {
+			options_count++;
+			width = scale * string_width(_description);
+		}
+		
+		var _max = 0;
+		//text = split_string_by_width(_options, max_width, scale);
+		for (var i = 0; i < array_length(_options); i++) {
+			_max = max(_max, string_width(_options[i].info.text));
+			options_count++;
+		}
+
+		width = max(width, scale * (_max + string_width(HOVER_MARKER)));
+		width = min(width, max_width);
+		height = line_height * options_count;
+		
+		full_width = width + (margin * 2);
+		full_height = height + (margin * 2);
+		
+		if (_pivot = "center") x -= width * 0.5;
+	}
+	
+	return _menu;
 }
