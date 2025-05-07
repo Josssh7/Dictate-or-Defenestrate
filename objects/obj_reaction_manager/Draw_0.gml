@@ -13,6 +13,7 @@ if (reaction_sprite != undefined) {
 				sprite_index: reaction_sprite,
 				image_xscale: _scale,
 				image_yscale: _scale,
-			});
+			}
+		);
 	}
 }
