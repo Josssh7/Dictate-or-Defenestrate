@@ -12,21 +12,21 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5ee4a66f-fc18-4eec-9250-382e251b28c9","name":"5ee4a66f-fc18-4eec-9250-382e251b28c9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"6ac14e75-f8fc-4548-8e81-2531c03c810c","name":"6ac14e75-f8fc-4548-8e81-2531c03c810c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":2245,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"ea58b636-e1ac-49af-8d85-d892f5dbc916","blendMode":0,"displayName":"default","isLocked":false,"name":"ea58b636-e1ac-49af-8d85-d892f5dbc916","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"4954c1e7-9546-4cab-9b27-3e029b56df31","blendMode":0,"displayName":"default","isLocked":false,"name":"4954c1e7-9546-4cab-9b27-3e029b56df31","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_newspaper",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"newspaper_sprites",
-    "path":"folders/Sprites/censorship_sprites/newspaper_sprites.yy",
+    "name":"censorship_sprites",
+    "path":"folders/Sprites/censorship_sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5ee4a66f-fc18-4eec-9250-382e251b28c9","path":"sprites/spr_newspaper/spr_newspaper.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"e46247dc-020a-4eec-b973-30b0f5fe0239","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6ac14e75-f8fc-4548-8e81-2531c03c810c","path":"sprites/spr_newspaper/spr_newspaper.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"57be10b9-35b3-4798-93bd-c3f709cf36ec","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

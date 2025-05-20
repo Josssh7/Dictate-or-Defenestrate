@@ -9,8 +9,12 @@ for (var i = 0; i < array_length(_words); i++) {
 	draw_set_color(c_black);
 	with (layer_instance_get_instance(_words[i])) {
 		if (!censored) {
-			if (hover) draw_set_color(CRIMSON);
+			if (hover and !obj_censorship_manager.finished) draw_set_color(CRIMSON);
 			draw_text(x, y, text);
 		} else draw_rectangle(x, top, x+width, bottom, false);
 	}
 }
+
+//Draw Photos
+draw_sprite_stretched(photo1, 0, 70, 695, photo_length, photo_length);
+draw_sprite_stretched(photo2, 0, 910, 1310, photo_length, photo_length);

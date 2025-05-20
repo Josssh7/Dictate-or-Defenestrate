@@ -28,6 +28,7 @@ insults = [
 	"tyrant",
 	"liar",
 	"devil",
+	"coward",
 ];
 
 //Methods

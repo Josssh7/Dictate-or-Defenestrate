@@ -9,4 +9,4 @@
 //	draw_sprite_ext(spr_particle, 0, start_x, start_y, max(abs(mouse_x-start_x), abs(mouse_y-start_y)), stroke_height, _angle, c_black, 1);
 //}
 
-draw_sprite_ext(spr_marker, 0, mouse_x, mouse_y, 2, 2, 0, c_white, 0.5);
+draw_sprite_ext(spr_marker, 0, mouse_x, mouse_y, 2, 2, 0, c_white, 0.65);

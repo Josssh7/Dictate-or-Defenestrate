@@ -1,1 +1,1 @@
-global.scapegoat = "Jameses";
+//global.scapegoat = "Jameses";

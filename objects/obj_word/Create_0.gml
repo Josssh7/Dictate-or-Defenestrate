@@ -2,7 +2,7 @@ censored = false;
 hover = false;
 
 draw_set_font(fnt_newspaper);
-stroke_height = 25;
+stroke_height = 24;
 width = string_width(text);
 var _y_middle = string_height(text) * 0.5;
 
