@@ -1,6 +1,6 @@
 line_height = 28;
 column_width = 340;
-photo_length = 300;
+photo_length = 275;
 
 photo1 = undefined;
 photo2 = undefined;

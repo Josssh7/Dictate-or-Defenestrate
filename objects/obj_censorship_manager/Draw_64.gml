@@ -88,9 +88,8 @@ else if (_amount == 3) {
 			draw_set_halign(fa_right);
 			_x = (display_get_gui_width() - _margin) - (string_width(mistakes[i].text) * _text_scale);
 		}
-	
-		draw_set_halign(fa_center);
 		draw_text_transformed(_x, _y, mistakes[i].text, _text_scale, _text_scale, 0);
+		draw_set_halign(fa_center);
 		draw_text_transformed_color(_x, _y+_line_gap, mistakes[i].reason, _reason_scale, _reason_scale, 0, _color, _color, _color, _color, 1);
 	}
 }

@@ -86,6 +86,7 @@
     {"id":{"name":"obj_HTML_FS","path":"objects/obj_HTML_FS/obj_HTML_FS.yy",},},
     {"id":{"name":"obj_insult","path":"objects/obj_insult/obj_insult.yy",},},
     {"id":{"name":"obj_item_parent","path":"objects/obj_item_parent/obj_item_parent.yy",},},
+    {"id":{"name":"obj_load_manager","path":"objects/obj_load_manager/obj_load_manager.yy",},},
     {"id":{"name":"obj_manifesto","path":"objects/obj_manifesto/obj_manifesto.yy",},},
     {"id":{"name":"obj_marker","path":"objects/obj_marker/obj_marker.yy",},},
     {"id":{"name":"obj_masses_back","path":"objects/obj_masses_back/obj_masses_back.yy",},},
@@ -222,12 +223,12 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_censorship","path":"rooms/rm_censorship/rm_censorship.yy",},},
-    {"roomId":{"name":"rm_speech","path":"rooms/rm_speech/rm_speech.yy",},},
-    {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"roomId":{"name":"rm_load","path":"rooms/rm_load/rm_load.yy",},},
+    {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
     {"roomId":{"name":"rm_customise","path":"rooms/rm_customise/rm_customise.yy",},},
     {"roomId":{"name":"rm_meeting","path":"rooms/rm_meeting/rm_meeting.yy",},},
+    {"roomId":{"name":"rm_censorship","path":"rooms/rm_censorship/rm_censorship.yy",},},
+    {"roomId":{"name":"rm_speech","path":"rooms/rm_speech/rm_speech.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

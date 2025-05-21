@@ -16,5 +16,5 @@ for (var i = 0; i < array_length(_words); i++) {
 }
 
 //Draw Photos
-draw_sprite_stretched(photo1, 0, 70, 695, photo_length, photo_length);
-draw_sprite_stretched(photo2, 0, 910, 1310, photo_length, photo_length);
+draw_sprite_stretched(photo1, 0, 85, 720, photo_length, photo_length);
+draw_sprite_stretched(photo2, 0, 935, 1345, photo_length, photo_length);

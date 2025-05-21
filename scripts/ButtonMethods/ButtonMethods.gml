@@ -9,5 +9,5 @@ function load_game() {
 function new_game() {
 	initialise_globals();
 	//Transition
-	room_goto_next();
+	room_goto(rm_customise);
 }
