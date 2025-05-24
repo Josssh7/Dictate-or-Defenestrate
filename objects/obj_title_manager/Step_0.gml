@@ -1,1 +1,1 @@
-if (keyboard_check_released(vk_anykey)) room_goto_next();
+if (keyboard_check_released(vk_anykey)) room_goto(rm_load);

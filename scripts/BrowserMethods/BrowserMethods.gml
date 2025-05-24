@@ -3,7 +3,7 @@ function get_hover(_obj) {
 	var _x = mouse_x;
 	var _y = mouse_y;
 
-	return position_meeting(_x, _y, _obj);
+	return position_meeting(_x, _y, _obj) and input_ok();
 }
 
 ///@desc See if left mb clicked on obj

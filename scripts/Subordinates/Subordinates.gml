@@ -134,7 +134,6 @@ function Subordinate(_role) constructor
 	name = global.names[irandom(array_length(global.names)-1)];
 	sprite = select_sub_sprite();
 	role = _role;
-	activity = get_sub_activity(_role);
 	skill = global.start_skill;
 	joined = global.calendar[global.day]; //Format when being used
 	likes = [
@@ -167,21 +166,6 @@ function update_sub(_key) {
 	increase_sub_fear(_key, global.subs[$ _key].fear_rate);
 }
 
-function get_sub_activity(_role) {
-	switch (_role) {
-		case "Personal Advisor": 
-			return new MenuOption("Consolidate Power", undefined);
-		case "Public Appearance Manager": 
-			return new MenuOption("Public Speech", undefined);
-		case "Propaganda Minister": 
-			return new MenuOption("Censor Media", undefined);
-		case "Treasurer": 
-			return new MenuOption("Manage Investments", undefined);
-		case "Commander-in-chief": 
-			return new MenuOption("Diplomacy", undefined);
-	}
-}
-
 function increase_sub_trust(_key, _val) {
 	with global.subs[$ _key] {
 		if (locked) trust = clamp(trust+_val, trust, 100); //Can't decrease when locked
@@ -195,4 +179,14 @@ function increase_sub_fear(_key, _val) { global.subs[$ _key].fear = clamp(global
 function kill_sub(_key) { //Might be easier to destroy instance from respective function
 	global.subs[$ _key] = noone;
 	global.calendar[global.day+1].subs[$ _key] = false;
+}
+
+function get_sub_trust_amount() {
+	var _amount = 0;
+	var _keys = variable_struct_get_names(global.subs);
+	for (var i = 0; i < array_length(_keys); i++) {
+		_amount += global.subs[$ _keys[i]].locked;
+	}
+	
+	return _amount;
 }

@@ -19,4 +19,4 @@ if (text_index != string_length(full_text) + 1 and speak_count != -1) {
 	} else speak_count = max(speak_count - 1, -1);
 }
 
-if (fade_alpha == 1 and keyboard_check_pressed(vk_space)) game_end();
+if (fade_alpha == 1 and keyboard_check_pressed(vk_space)) room_goto(rm_review);

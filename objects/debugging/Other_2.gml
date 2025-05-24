@@ -1,3 +1,3 @@
 //whatever code I need for debugging
-randomise();
-initialise_globals();
+//randomise();
+//initialise_globals();

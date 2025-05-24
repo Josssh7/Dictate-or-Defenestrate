@@ -3,6 +3,8 @@ event_inherited();
 scream_countdown = -1;
 scream_buffer = 40;
 
+kill_list = [];
+
 fade_alpha = 0;
 global.fading = false;
 
@@ -13,7 +15,7 @@ on_click = function() {
 		var _sub = layer_instance_get_instance(_ids[i]);
 		if (_sub.selected) {
 			kill_sub(_sub.key);
-			instance_destroy(_sub);
+			array_push(kill_list, _sub);
 			
 			//Visuals
 			alarm[0] = 1;

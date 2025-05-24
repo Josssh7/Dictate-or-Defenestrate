@@ -1,3 +1,4 @@
+if (!input_ok()) exit;
 mouse_over = false;
 
 var _y = y + full_height + options_buffer;

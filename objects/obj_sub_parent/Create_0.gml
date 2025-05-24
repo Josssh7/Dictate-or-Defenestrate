@@ -3,6 +3,9 @@ event_inherited();
 relative_pos = "";
 key = "";
 
+activity_text = "";
+activity = function() {}
+
 get_details = function(){ return global.subs[$ key] };
 
 report = noone;
@@ -29,7 +32,7 @@ function display_details() {
 		new MenuItem("Likes", _details.likes), //argument is an array just for this one fucking feature
 		new MenuItem("Popularity", [string(_details.popularity) + "%"]),
 		new MenuItem("Status", ["ADD LATER"]),
-	], {trust: _details.trust, fear: _details.fear}, [new MenuOption("Get Report", display_report), _details.activity], _details.name, _dir);
+	], {trust: _details.trust, fear: _details.fear}, [new MenuOption("Get Report", display_report), new MenuOption(activity_text, activity)], _details.name, _dir);
 }
 
 function display_report() {

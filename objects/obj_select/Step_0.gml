@@ -1,3 +1,4 @@
+if (!input_ok()) exit;
 mouse_over = false;
 
 var _mx = device_mouse_x_to_gui(0);

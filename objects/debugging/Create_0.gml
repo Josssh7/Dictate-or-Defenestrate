@@ -1,1 +1,2 @@
-//global.scapegoat = "Jameses";
+randomise();
+initialise_globals();

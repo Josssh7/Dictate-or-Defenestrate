@@ -3,7 +3,7 @@ var _h = camera_get_view_height(camera);
 var _x = camera_get_view_x(camera);
 var _y = camera_get_view_y(camera);
 
-if (keyboard_check_released(vk_escape)) reset_target();
+if (keyboard_check_released(vk_escape) and input_ok()) reset_target();
 
 //Panning
 var _dir = point_direction(_x+(camera_get_view_width(camera)*0.5), _y+(camera_get_view_height(camera)*0.5), mouse_x, mouse_y);
