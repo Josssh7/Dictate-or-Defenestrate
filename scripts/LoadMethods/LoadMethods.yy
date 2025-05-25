@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"ButtonMethods",
+  "%Name":"LoadMethods",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"ButtonMethods",
+  "name":"LoadMethods",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

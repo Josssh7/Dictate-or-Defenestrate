@@ -5,6 +5,8 @@
 #macro TEXT_GRAY make_color_rgb(200, 200, 200)
 #macro LOVE_PINK make_color_rbg(255, 102, 204)
 
+randomise();
+
 global.name = "";
 global.party = "";
 global.scapegoat = "";

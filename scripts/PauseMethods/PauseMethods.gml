@@ -1,3 +1,4 @@
 function input_ok() {
-	return !global.fading;
+	if (variable_global_exists("fading")) return !global.fading;
+	else return true;
 }

@@ -166,6 +166,34 @@ function update_sub(_key) {
 	increase_sub_fear(_key, global.subs[$ _key].fear_rate);
 }
 
+function replenish_sub() {
+	var _keys = variable_struct_get_names(global.subs);
+	for (var i = 0; i < array_length(_keys); i++) {
+		if (global.subs[$ _keys[i]] == noone) {
+			switch(_keys[i]) {
+				case personal_advisor: 
+					new Subordinate("Personal Advisor");
+					break;
+				case appearance_manager: 
+					new Subordinate("Public Appearance Manager");
+					break;
+				case propaganda_minister: 
+					new Subordinate("Propaganda Minister");
+					break;
+				case treasurer: 
+					new Subordinate("Treasurer");
+					break;
+				case commander: 
+					new Subordinate("Commander-in-chief");
+					break;
+				default: //Error
+					return "";
+			}
+		}
+		return; //Use return value here for pokemon thing
+	}
+}
+
 function increase_sub_trust(_key, _val) {
 	with global.subs[$ _key] {
 		if (locked) trust = clamp(trust+_val, trust, 100); //Can't decrease when locked

@@ -2,7 +2,12 @@
 function get_hover(_obj) {
 	var _x = mouse_x;
 	var _y = mouse_y;
-
+	
+	if (os_browser != browser_not_a_browser) {	
+		_x = device_mouse_x_to_gui(0);
+		_y = device_mouse_y_to_gui(0);
+	}
+	
 	return position_meeting(_x, _y, _obj) and input_ok();
 }
 

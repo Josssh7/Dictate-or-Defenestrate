@@ -1,2 +1,2 @@
-randomise();
-initialise_globals();
+//randomise();
+//initialise_globals();

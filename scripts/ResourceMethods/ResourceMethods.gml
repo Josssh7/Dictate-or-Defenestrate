@@ -26,6 +26,8 @@ function next_day() {
 	
 	//Iterate through and update subs
 	for (var i = array_length(_keys)-1; i >= 0; --i) update_sub(_keys[i]);
+	
+	if (array_length(_keys) < 5) replenish_sub();
 }
 
 //3+ People w/ fear <= 10 --> Coup: Game Over

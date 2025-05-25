@@ -1,5 +1,5 @@
 //Constants
-g = 1.5; //Gravity is a preset variable so can't use that :(
+g = 1.25; //Gravity is a preset variable so can't use that :(
 initial_jump_speed = -17.5;
 initial_shake = 10;
 base_y = y;
