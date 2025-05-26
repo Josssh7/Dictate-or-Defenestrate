@@ -5,8 +5,8 @@ function next_day() {
 	for (var i = array_length(_keys)-1; i >= 0; --i) {
 		if (global.subs[$ _keys[i]].fear <= 15) {
 			for (var j = array_length(_keys)-1; j >= 0; --j) increase_sub_fear(_keys[j], -1);
+			break;
 		}
-		break;
 	}
 	
 	//2+ People w/ trust <= 30 --> fear rate down 1 and trust rate down 1 (Plot: increasing deceit and ambition)

@@ -119,7 +119,6 @@ global.sub_sprites = [ //idk how to iterate through groups :(
 
 ///@description Mutator method for sprites (prevents repeats)
 function select_sub_sprite() {
-	
 	var _index = irandom(array_length(global.sub_sprites)-1);
 	while (global.sub_sprites[_index].used) {
 		_index = irandom(array_length(global.sub_sprites)-1);
