@@ -1,4 +1,5 @@
 //Draw Options Background
+if (!input_ok()) exit;
 draw_sprite_stretched(spr_textbox, 0, x-margin, y-margin, full_width+margin, full_height+margin);
 
 draw_set_font(fnt_menu);

@@ -1,3 +1,4 @@
+if (!input_ok()) exit;
 draw_set_color(c_white);
 
 //Draw Menu Background
