@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"obj_meeting_manager",
+  "%Name":"obj_wasted_manager",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_meeting_manager",
+  "name":"obj_wasted_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"meeting_room_objects",
-    "path":"folders/Objects/meeting_room_objects.yy",
+    "name":"other_objects",
+    "path":"folders/Objects/other_objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

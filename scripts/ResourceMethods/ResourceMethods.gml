@@ -27,6 +27,7 @@ function next_day() {
 	//Iterate through and update subs
 	for (var i = array_length(_keys)-1; i >= 0; --i) update_sub(_keys[i]);
 	
+	//Only 1 Per Day
 	if (array_length(_keys) < 5) replenish_sub();
 }
 

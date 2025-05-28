@@ -141,7 +141,7 @@ function Subordinate(_role) constructor
 				global.ideas[irandom(array_length(global.ideas)-1)],
 			];
 	popularity = irandom(100);
-	trust = 40;
+	trust = 50;
 	trust_rate = 3;
 	fear = 50;
 	fear_rate = -3;

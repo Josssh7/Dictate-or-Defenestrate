@@ -1,0 +1,1 @@
+if (input_ok() and keyboard_check_pressed(vk_space)) obj_transition_end.transition(rm_review);

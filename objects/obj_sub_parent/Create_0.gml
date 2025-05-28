@@ -31,8 +31,16 @@ function display_details() {
 		new MenuItem("Joined", [format_date(_details.joined)]),
 		new MenuItem("Likes", _details.likes), //argument is an array just for this one fucking feature
 		new MenuItem("Popularity", [string(_details.popularity) + "%"]),
-		new MenuItem("Status", ["ADD LATER"]),
+		new MenuItem("Status", [calculate_status()]),
 	], {trust: _details.trust, fear: _details.fear}, [new MenuOption("Get Report", display_report), new MenuOption(activity_text, activity)], _details.name, _dir);
+}
+
+function calculate_status() {
+	var _details = get_details();
+	if (_details.locked) return "Smitten";
+	else if (_details.trust >= 75) return "Devoted";
+	else if (_details.trust >= 50) return "Loyal";
+	else return "Ambivalent";
 }
 
 function display_report() {
