@@ -3,8 +3,9 @@ function next_day() {
 	
 	//1+ Person w/ fear <= 15 --> everyone fear (NOT rate) down 1 (Fearmongering: spreads plans)
 	for (var i = array_length(_keys)-1; i >= 0; --i) {
+		if (check_dead(global.subs[$ _keys[i]])) continue;
 		if (global.subs[$ _keys[i]].fear <= 15) {
-			for (var j = array_length(_keys)-1; j >= 0; --j) increase_sub_fear(_keys[j], -1);
+			for (var j = array_length(_keys)-1; j >= 0; --j) if(!check_dead(global.subs[$ _keys[j]])) increase_sub_fear(_keys[j], -1);
 			break;
 		}
 	}
@@ -12,10 +13,12 @@ function next_day() {
 	//2+ People w/ trust <= 30 --> fear rate down 1 and trust rate down 1 (Plot: increasing deceit and ambition)
 	var plot_amnt = 0;
 	for (var i = array_length(_keys)-1; i >= 0; --i) {
+		if (check_dead(global.subs[$ _keys[i]])) continue;
 		if (global.subs[$ _keys[i]].trust <= 30) {
 			plot_amnt++;
 			if (plot_amnt > 1) {
 				for (var j = array_length(_keys)-1; j >= 0; --j) {
+					if (check_dead(global.subs[$ _keys[j]])) continue;
 					global.subs[$ _keys[j]].fear_rate--;
 					global.subs[$ _keys[j]].trust_rate--;
 				}
@@ -25,10 +28,10 @@ function next_day() {
 	}
 	
 	//Iterate through and update subs
-	for (var i = array_length(_keys)-1; i >= 0; --i) update_sub(_keys[i]);
+	for (var i = array_length(_keys)-1; i >= 0; --i) if (!check_dead(global.subs[$ _keys[i]])) update_sub(_keys[i]);
 	
 	//Only 1 Per Day
-	if (array_length(_keys) < 5) replenish_sub();
+	replenish_sub();
 }
 
 //3+ People w/ fear <= 10 --> Coup: Game Over

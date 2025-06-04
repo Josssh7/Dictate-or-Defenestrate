@@ -6,3 +6,4 @@ if !(_subs.treasurer) instance_destroy(obj_treasurer);
 if !(_subs.commander) instance_destroy(obj_commander);
 
 timer = 60 * 30;
+margin = 5;

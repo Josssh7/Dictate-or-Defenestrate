@@ -105,33 +105,45 @@ function SubSprite(_sprite) constructor
 	used = false;
 }
 
-global.sub_sprites = [ //idk how to iterate through groups :(
-	new SubSprite(spr_gobsmacked_man),
-	new SubSprite(spr_happier_girl),
-	new SubSprite(spr_happy_girl),
-	new SubSprite(spr_happy_man),
-	new SubSprite(spr_hat_man),
-	new SubSprite(spr_jacket_man),
-	new SubSprite(spr_scary_man),
-	new SubSprite(spr_shadow_man),
-	new SubSprite(spr_sunglass_girl),
+global.angled_sub_sprites = [ //idk how to iterate through groups :(
+	new SubSprite(spr_sub_1),
+	new SubSprite(spr_sub_2),
+	new SubSprite(spr_sub_3),
+	new SubSprite(spr_sub_4),
+	new SubSprite(spr_sub_5),
+	new SubSprite(spr_sub_6),
+];
+
+global.straight_sub_sprites = [
+	new SubSprite(spr_sub_straight_1),
+	new SubSprite(spr_sub_straight_2),
 ]
 
 ///@description Mutator method for sprites (prevents repeats)
-function select_sub_sprite() {
-	var _index = irandom(array_length(global.sub_sprites)-1);
-	while (global.sub_sprites[_index].used) {
-		_index = irandom(array_length(global.sub_sprites)-1);
+function select_sub_sprite(_role) {
+	if (_role == "Personal Advisor") {
+		var _index = irandom(array_length(global.straight_sub_sprites)-1);
+		while (global.straight_sub_sprites[_index].used) {
+			_index = irandom(array_length(global.straight_sub_sprites)-1);
+		}
+		global.straight_sub_sprites[_index].used = true;
+		return {sprite: global.straight_sub_sprites[_index].sprite, index: _index};
 	}
-	global.sub_sprites[_index].used = true;
-	return global.sub_sprites[_index].sprite;
+	else {
+		var _index = irandom(array_length(global.angled_sub_sprites)-1);
+		while (global.angled_sub_sprites[_index].used) {
+			_index = irandom(array_length(global.angled_sub_sprites)-1);
+		}
+		global.angled_sub_sprites[_index].used = true;
+		return {sprite: global.angled_sub_sprites[_index].sprite, index: _index};
+	}
 }
 
 ///@param {string} _role the subordinates role
 function Subordinate(_role) constructor
 {
 	name = global.names[irandom(array_length(global.names)-1)];
-	sprite = select_sub_sprite();
+	sprite_data = select_sub_sprite(_role);
 	role = _role;
 	skill = global.start_skill;
 	joined = global.calendar[global.day]; //Format when being used
@@ -168,27 +180,28 @@ function update_sub(_key) {
 function replenish_sub() {
 	var _keys = variable_struct_get_names(global.subs);
 	for (var i = 0; i < array_length(_keys); i++) {
-		if (global.subs[$ _keys[i]] == noone) {
+		if (check_dead(global.subs[$ _keys[i]])) {
 			switch(_keys[i]) {
-				case personal_advisor: 
-					new Subordinate("Personal Advisor");
+				case "personal_advisor": 
+					global.subs.personal_advisor = new Subordinate("Personal Advisor");
 					break;
-				case appearance_manager: 
-					new Subordinate("Public Appearance Manager");
+				case "appearance_manager": 
+					global.subs.appearance_manager = new Subordinate("Public Appearance Manager");
 					break;
-				case propaganda_minister: 
-					new Subordinate("Propaganda Minister");
+				case "propaganda_minister": 
+					global.subs.propaganda_minister = new Subordinate("Propaganda Minister");
 					break;
-				case treasurer: 
-					new Subordinate("Treasurer");
+				case "treasurer": 
+					global.subs.treasurer = new Subordinate("Treasurer");
 					break;
-				case commander: 
-					new Subordinate("Commander-in-chief");
+				case "commander": 
+					global.subs.commander = new Subordinate("Commander-in-chief");
 					break;
 				default: //Error
 					return "";
 			}
 		}
+		//Only 1 per day
 		return; //Use return value here for pokemon thing
 	}
 }
@@ -204,7 +217,10 @@ function increase_sub_trust(_key, _val) {
 function increase_sub_fear(_key, _val) { global.subs[$ _key].fear = clamp(global.subs[$ _key].fear+_val, 0, 100) }
 
 function kill_sub(_key) { //Might be easier to destroy instance from respective function
+	if (_key == "personal_advisor") global.straight_sub_sprites[global.subs[$ _key].sprite_data.index].used = false;
+	else global.angled_sub_sprites[global.subs[$ _key].sprite_data.index].used = false;
 	global.subs[$ _key] = noone;
+	global.start_skill = max(global.start_skill-1, 0);
 	global.calendar[global.day+1].subs[$ _key] = false;
 }
 
@@ -212,8 +228,13 @@ function get_sub_trust_amount() {
 	var _amount = 0;
 	var _keys = variable_struct_get_names(global.subs);
 	for (var i = 0; i < array_length(_keys); i++) {
-		_amount += global.subs[$ _keys[i]].locked;
+		if (global.subs[$ _keys[i]] != noone) _amount += global.subs[$ _keys[i]].locked;
 	}
 	
 	return _amount;
+}
+
+function check_dead(_sub) {
+	if (_sub == noone or _sub == undefined or _sub == -4) return true;
+	else return false;
 }

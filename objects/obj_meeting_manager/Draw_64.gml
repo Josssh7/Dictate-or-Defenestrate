@@ -9,4 +9,4 @@ draw_set_font(fnt_timer);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
-draw_text(display_get_gui_width()-string_width(_timer_text), 10, _timer_text);
+draw_text(display_get_gui_width()-(string_width(_timer_text)+margin), margin, _timer_text);

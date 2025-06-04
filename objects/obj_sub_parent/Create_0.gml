@@ -8,6 +8,11 @@ activity = function() {}
 
 get_details = function(){ return global.subs[$ key] };
 
+//Adjusting Image Values for Sprites
+image_xscale *= 0.5;
+image_yscale *= 0.5;
+thickness = 2;
+
 report = noone;
 report_text = function() { 
 	var _details = get_details();

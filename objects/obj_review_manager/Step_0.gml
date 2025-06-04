@@ -7,6 +7,7 @@ if (point_in_rectangle(mouse_x, mouse_y, _x-(_w*0.5), _y -_h, _x+(_w*0.5), _y)) 
 	hover = "continue";
 	if (mouse_check_button_pressed(mb_left) and input_ok()) { //Next Day
 		next_day();
+		save_game();
 		room_goto(rm_meeting);
 	}
 	else exit;
@@ -19,7 +20,7 @@ if (point_in_rectangle(mouse_x, mouse_y, _x-(_w*0.5), _y -_h, _x+(_w*0.5), _y)) 
 	hover = "exit";
 	if (mouse_check_button_pressed(mb_left) and input_ok()) { //Close
 		next_day();
-		//Should save here
+		save_game();
 		game_end();
 	}
 	else exit;
