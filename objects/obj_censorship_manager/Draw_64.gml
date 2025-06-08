@@ -80,10 +80,10 @@ else if (_amount == 3) {
 		var _color = (mistakes[i].reason == "MISSED") ? AMBER : CRIMSON;
 		var _x = display_get_gui_width() * 0.5;
 		if (i == 0) {
-			_x = _margin + (string_width(mistakes[i].text) * _text_scale);
+			_x = _margin + (string_width(mistakes[i].text) * 0.5 * _text_scale);
 		}
 		else if (i == 2) {
-			_x = (display_get_gui_width() - _margin) - (string_width(mistakes[i].text) * _text_scale);
+			_x = (display_get_gui_width() - _margin) - (string_width(mistakes[i].text) * 0.5 * _text_scale);
 		}
 		draw_text_transformed(_x, _y, mistakes[i].text, _text_scale, _text_scale, 0);
 		draw_text_transformed_color(_x, _y+_line_gap, mistakes[i].reason, _reason_scale, _reason_scale, 0, _color, _color, _color, _color, 1);

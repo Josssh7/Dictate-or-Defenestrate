@@ -1,3 +1,8 @@
+function end_day() {
+	if (check_gameover()) room_goto(rm_gameover);
+	else room_goto(rm_review);
+}
+
 function next_day() {
 	var _keys = variable_struct_get_names(global.subs);
 	
@@ -34,4 +39,31 @@ function next_day() {
 	replenish_sub();
 }
 
-//3+ People w/ fear <= 10 --> Coup: Game Over
+function check_gameover() {
+	//Coup
+	var _keys = variable_struct_get_names(global.subs);
+	var _coup_amnt = 0
+	for (var i = array_length(_keys)-1; i >= 0; --i) {
+		if (check_dead(global.subs[$ _keys[i]])) continue;
+		if (global.subs[$ _keys[i]].fear <= 15) {
+			_coup_amnt++;
+			if (_coup_amnt > 2) { //3+ People w/ ambition >= 85 --> Coup: Game Over
+				global.gameover_message = "Overthrown in a Coup";
+				return true;
+			}
+		}
+	}
+	
+	//Revolution
+	if (global.support <= 5) {
+		global.gameover_message = "Beheaded in a Revolution";
+		return true;
+	}
+	
+	//Bankruptcy
+	if (global.gdp <= 0.5 and global.funds <= 5) {
+		global.gameover_message = "Economy Collapsed";
+		return true;
+	}
+	return false;
+}

@@ -82,6 +82,7 @@
     {"id":{"name":"obj_dice","path":"objects/obj_dice/obj_dice.yy",},},
     {"id":{"name":"obj_frame","path":"objects/obj_frame/obj_frame.yy",},},
     {"id":{"name":"obj_fsbrowser","path":"objects/obj_fsbrowser/obj_fsbrowser.yy",},},
+    {"id":{"name":"obj_gameover","path":"objects/obj_gameover/obj_gameover.yy",},},
     {"id":{"name":"obj_headline","path":"objects/obj_headline/obj_headline.yy",},},
     {"id":{"name":"obj_HTML_FS","path":"objects/obj_HTML_FS/obj_HTML_FS.yy",},},
     {"id":{"name":"obj_insult","path":"objects/obj_insult/obj_insult.yy",},},
@@ -125,6 +126,7 @@
     {"id":{"name":"obj_word","path":"objects/obj_word/obj_word.yy",},},
     {"id":{"name":"rm_censorship","path":"rooms/rm_censorship/rm_censorship.yy",},},
     {"id":{"name":"rm_customise","path":"rooms/rm_customise/rm_customise.yy",},},
+    {"id":{"name":"rm_gameover","path":"rooms/rm_gameover/rm_gameover.yy",},},
     {"id":{"name":"rm_load","path":"rooms/rm_load/rm_load.yy",},},
     {"id":{"name":"rm_meeting","path":"rooms/rm_meeting/rm_meeting.yy",},},
     {"id":{"name":"rm_review","path":"rooms/rm_review/rm_review.yy",},},
@@ -245,6 +247,7 @@
     {"roomId":{"name":"rm_censorship","path":"rooms/rm_censorship/rm_censorship.yy",},},
     {"roomId":{"name":"rm_wasted","path":"rooms/rm_wasted/rm_wasted.yy",},},
     {"roomId":{"name":"rm_review","path":"rooms/rm_review/rm_review.yy",},},
+    {"roomId":{"name":"rm_gameover","path":"rooms/rm_gameover/rm_gameover.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
