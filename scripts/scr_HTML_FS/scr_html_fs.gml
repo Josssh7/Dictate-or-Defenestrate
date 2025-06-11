@@ -56,5 +56,15 @@ function HTML_FS_Step()
 		HTML_FS_canvas_aspect_ratio(base_size, browser_width, browser_height);
 	}
 	
-	if (keyboard_check_pressed(ord("F"))) { HTML_FS_canvas_fullscreen(); }
+	var _allowed = true;
+	for(var i = 0;i<instance_number(obj_textbox_input);i++){
+	    var _textbox_id = instance_find(obj_textbox_input,i);
+
+	    if (_textbox_id.typing){
+	       _allowed = false
+	        break;
+	    }
+}
+	
+	if (keyboard_check_pressed(ord("F")) and _allowed) { HTML_FS_canvas_fullscreen(); }
 }

@@ -12,6 +12,7 @@ if (get_clicked(self)) {
 	}
 	
 	for (var i=0; i<array_length(text_fields); i++) text_fields[i].submit_data();
+	typing = false;
 	save_game();
 	room_goto(rm_meeting);
 }

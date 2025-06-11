@@ -1,0 +1,1 @@
+if (music != undefined) audio_play_sound(music, 12, true);
