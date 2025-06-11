@@ -17,4 +17,31 @@ if (get_clicked(self)) {
 	keyboard_string = text; //So any keys pressed while !typing are removed
 }
 //Full caps, trim spaces during data sanitisation
-if (typing) text = string_upper(keyboard_string);
+draw_set_font(fnt_dialogue);
+if (typing) {
+	draw_set_font(fnt_dialogue); //Keeping it inside width of textbox
+	if (string_width(text) * scale > sprite_width * 0.92) {
+		blinking = false;
+		alarm[0] = -1;
+		maxed = true;
+		text = prev_text;
+		keyboard_string = prev_text;
+		if (keyboard_check_pressed(vk_backspace)) {
+			while (string_width(text) * scale > sprite_width * 0.92) text = string_delete(text, string_length(text), 1);
+			keyboard_string = text;
+			maxed = false;
+			blinking = true;
+			alarm[0] = blink_time;
+		}
+	} else {
+		if (maxed) {
+			maxed = false;
+			blinking = true;
+			alarm[0] = blink_time;
+		}
+		
+		text = sanitise(keyboard_string);
+	}
+}
+
+prev_text = text;

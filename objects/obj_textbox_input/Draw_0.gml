@@ -1,3 +1,5 @@
+draw_self();
+
 //Draw Prompt Text
 draw_set_font(fnt_dialogue);
 draw_set_halign(fa_center);
