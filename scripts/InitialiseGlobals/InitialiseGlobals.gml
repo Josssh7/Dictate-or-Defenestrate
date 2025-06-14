@@ -1,4 +1,5 @@
 function initialise_globals() {
+	global.status = "President";
 	global.support = 40; //Percentage
 	global.support_rate = -1;
 	global.gdp = random_range(3, 3.2); //Million (currency?)

@@ -4,6 +4,7 @@ function end_day() {
 }
 
 function next_day() {
+	//Subordinate Methods
 	var _keys = variable_struct_get_names(global.subs);
 	
 	//1+ Person w/ fear <= 15 --> everyone fear (NOT rate) down 1 (Fearmongering: spreads plans)
@@ -37,6 +38,11 @@ function next_day() {
 	
 	//Only 1 Per Day
 	replenish_sub();
+	
+	//Stat Methods
+	global.gdp = max(global.gdp + global.gdp_rate, 0);
+	global.support = clamp(global.support + global.support_rate, 0, 100);
+	global.funds = max(global.funds + global.funds_rate, 0);
 }
 
 function check_gameover() {

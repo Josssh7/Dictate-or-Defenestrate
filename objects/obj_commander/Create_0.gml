@@ -8,7 +8,4 @@ if (check_dead(get_details())) {
 }
 sprite_index = get_details().sprite_data.sprite;
 
-activity_text = "Diplomacy";
-activity = function() {}
-
 //get_details = function(){ return global.subs.commander };

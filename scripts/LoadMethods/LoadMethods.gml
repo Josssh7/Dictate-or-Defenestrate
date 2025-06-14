@@ -3,6 +3,7 @@ function save_game() {
 		name : global.name,
 		party: global.party,
 		scapegoat: global.scapegoat,
+		status: global.status,
 		start_skill: global.start_skill,
 		subs: global.subs,
 
@@ -33,6 +34,7 @@ function continue_game() {
 		global.name = _save_data.name;
 		global.party = _save_data.party;
 		global.scapegoat = _save_data.scapegoat;
+		global.status = _save_data.status;
 		global.start_skill = _save_data.start_skill;
 		global.subs = _save_data.subs;
 

@@ -1,9 +1,7 @@
 {
   "$GMObject":"",
   "%Name":"obj_scale",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_scale",
   "overriddenProperties":[],
@@ -11,10 +9,7 @@
     "name":"item_objects",
     "path":"folders/Objects/meeting_room_objects/item_objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_item_parent",
-    "path":"objects/obj_item_parent/obj_item_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

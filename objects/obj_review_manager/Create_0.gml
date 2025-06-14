@@ -2,7 +2,7 @@ margin = 15;
 line_height = 35;
 
 day_scale = 0.4;
-stats_scale = 0.3;
+stats_scale = 0.25;
 action_scale = 0.2;
 
 hover = "";
@@ -21,6 +21,10 @@ day_text = "Day " + string(global.day + 1); //Since day is an index so starts fr
 //Initialising Stat Texts
 #region
 stats_text = [];
+
+var _status_color = AMBER;
+if (global.status == "Absolute Power") _status_color = c_green;
+array_push(stats_text, new stat("Status: ", global.status, "", _status_color));
 
 var _support_color = AMBER;
 if (global.support >= 75) _support_color = c_green;
