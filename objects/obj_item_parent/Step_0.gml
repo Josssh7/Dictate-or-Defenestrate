@@ -6,4 +6,5 @@ if (get_clicked(self))
 		on_click();
 	}
 	else close_menu(id);
+	audio_play_sound(snd_click, 5, false);
 }

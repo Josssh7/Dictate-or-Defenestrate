@@ -23,6 +23,7 @@ if ((mouse_check_button_pressed(mb_left) and mouse_over) or keyboard_check_press
 	var _desc = (description != "");
 	var _onclick = options[hover-_desc].onclick;
 	if (_onclick != undefined) _onclick(options[hover-_desc].info);
+	audio_play_sound(snd_click, 5, false);
 }
 
 mx_prev = _mx;

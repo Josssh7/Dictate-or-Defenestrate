@@ -15,6 +15,7 @@ if (get_clicked(self)) {
 	}
 	else turn_off();
 	keyboard_string = text; //So any keys pressed while !typing are removed
+	audio_play_sound(snd_click, 5, false);
 }
 //Full caps, trim spaces during data sanitisation
 draw_set_font(fnt_dialogue);

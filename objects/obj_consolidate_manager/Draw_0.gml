@@ -7,23 +7,25 @@ draw_set_halign(fa_left);
 if (hover == "buy") {
 	draw_text_transformed(margin, 0, "Funds: ", resources_scale, resources_scale, 0);
 	draw_set_halign(fa_right);
-	draw_text_transformed(room_width-(margin+27), 0, "Public Support: ", resources_scale, resources_scale, 0);
+	draw_text_transformed(room_width-(margin+41), 0, "Public Support: ", resources_scale, resources_scale, 0);
 	if (can_buy()) {
 		draw_set_color(AMBER);
-		draw_text_transformed(margin+(string_width("Funds:  ")*resources_scale), 0, string(global.funds-items[level+1].cost.funds), resources_scale, resources_scale, 0);
+		draw_set_halign(fa_left);
+		draw_text_transformed(margin+(string_width("Funds: ")*resources_scale), 0, string(global.funds-items[level+1].cost.funds) + "K", resources_scale, resources_scale, 0);
 		draw_set_halign(fa_right);
-		draw_text_transformed(room_width-margin, 0, string(global.support-items[level+1].cost.support), resources_scale, resources_scale, 0);
+		draw_text_transformed(room_width-margin, 0, string(global.support-items[level+1].cost.support) + "%", resources_scale, resources_scale, 0);
 	} else {
 		draw_set_color(CRIMSON);
-		draw_text_transformed(margin+(string_width("Funds:  ")*resources_scale), 0, string(global.funds), resources_scale, resources_scale, 0);
+		draw_set_halign(fa_left);
+		draw_text_transformed(margin+(string_width("Funds: ")*resources_scale), 0, string(global.funds) + "K", resources_scale, resources_scale, 0);
 		draw_set_halign(fa_right);
-		draw_text_transformed(room_width-margin, 0, string(global.support), resources_scale, resources_scale, 0);
+		draw_text_transformed(room_width-margin, 0, string(global.support) + "%", resources_scale, resources_scale, 0);
 	}
 }
 else {
-	draw_text_transformed(margin, 0, "Funds: " + string(global.funds), resources_scale, resources_scale, 0);
+	draw_text_transformed(margin, 0, "Funds: " + string(global.funds) + "K", resources_scale, resources_scale, 0);
 	draw_set_halign(fa_right);
-	draw_text_transformed(room_width-margin, 0, "Public Support: " + string(global.support), resources_scale, resources_scale, 0);
+	draw_text_transformed(room_width-margin, 0, "Public Support: " + string(global.support) + "%", resources_scale, resources_scale, 0);
 }
 
 //Draw Items

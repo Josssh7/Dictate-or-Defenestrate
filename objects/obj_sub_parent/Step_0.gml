@@ -5,11 +5,13 @@ if (get_clicked(self) and !overlap()) {
 		if (menu_open) {
 			//Handle other items with menus
 			close_other_menus(id);
+			
 			//Open menu
 			obj_camera_zoom.new_target(self, relative_pos);
 			display_details();
 		}
 		else close_menu(id);
+		audio_play_sound(snd_click, 5, false);
 	}
 }
 

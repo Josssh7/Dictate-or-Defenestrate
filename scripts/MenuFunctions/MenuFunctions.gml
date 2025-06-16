@@ -112,6 +112,7 @@ function close_menu(_inst) {
 		obj_camera_zoom.reset_target();
 		if (menu != noone) {
 			instance_destroy(menu);
+			if (instance_exists(obj_report)) instance_destroy(obj_report);
 			menu = noone;
 		}
 	}

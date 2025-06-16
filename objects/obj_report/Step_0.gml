@@ -9,6 +9,7 @@ if (point_in_rectangle(_mx, _my, x, y + ((line_count-1) * line_height), x+(strin
 
 if ((mouse_check_button_pressed(mb_left) and mouse_over) or keyboard_check_pressed(vk_enter)) {
 	if (previous_menu != noone) instance_activate_object(previous_menu);
+	audio_play_sound(snd_click, 5, false);
 	instance_destroy();
 }
 	

@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_wilhelm_scream",
+  "%Name":"snd_click",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.116848,
-  "name":"snd_wilhelm_scream",
+  "duration":0.047959,
+  "name":"snd_click",
   "parent":{
-    "name":"meeting_room_sfx",
-    "path":"folders/Sounds/meeting_room_sfx.yy",
+    "name":"ui_sfx",
+    "path":"folders/Sounds/ui_sfx.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_wilhelm_scream.wav",
+  "soundFile":"snd_click.wav",
   "type":0,
-  "volume":0.6,
+  "volume":1.0,
 }

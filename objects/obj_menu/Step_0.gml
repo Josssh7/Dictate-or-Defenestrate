@@ -23,6 +23,7 @@ if (hover <  0) hover = options_count - 1;
 if ((mouse_check_button_pressed(mb_left) and mouse_over) or keyboard_check_pressed(vk_enter)) {
 	var _onclick = options[hover].onclick;
 	if (_onclick != undefined) _onclick();
+	audio_play_sound(snd_click, 5, false);
 }
 
 mx_prev = _mx;
