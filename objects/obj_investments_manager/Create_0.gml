@@ -7,7 +7,6 @@ resources_scale = 0.25;
 item_scale = 0.4;
 action_scale = 0.35;
 
-
 hover = "";
 
 items = [ //Impacts Support Rate

@@ -162,11 +162,16 @@ function Subordinate(_role) constructor
 
 function initialise_subs() {
 	return {
-		personal_advisor: new Subordinate("Personal Advisor"), //Is this the best way to do this?
-		appearance_manager: new Subordinate("Public Appearance Manager"),
-		propaganda_minister: new Subordinate("Propaganda Minister"),
-		treasurer: new Subordinate("Treasurer"),
-		commander: new Subordinate("Commander-in-chief"),
+		personal_advisor: noone,
+		appearance_manager: noone,
+		propaganda_minister: noone,
+		treasurer: noone,
+		commander: noone,
+		//personal_advisor: new Subordinate("Personal Advisor"),
+		//appearance_manager: new Subordinate("Public Appearance Manager"),
+		//propaganda_minister: new Subordinate("Propaganda Minister"),
+		//treasurer: new Subordinate("Treasurer"),
+		//commander: new Subordinate("Commander-in-chief"),
 	}
 }
 

@@ -4,6 +4,8 @@ function end_day() {
 }
 
 function next_day() {
+	global.day++;
+	
 	//Subordinate Methods
 	var _keys = variable_struct_get_names(global.subs);
 	

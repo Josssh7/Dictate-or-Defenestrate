@@ -6,7 +6,6 @@ global.adjectives = [
 	"Hat-wearing",
 	"Pedantic",
 	"Nerdy",
-	"Based",
 	"Meek",
 	"Narcissistic",
 	"Penguin Lovin'",

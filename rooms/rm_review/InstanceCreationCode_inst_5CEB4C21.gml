@@ -1,1 +1,1 @@
-music = snd_church;
+music = undefined;

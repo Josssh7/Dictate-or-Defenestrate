@@ -86,4 +86,8 @@ for (var i = 0; i < 100; i++) {
 	array_push(global.calendar, new Date(_day, _month, _year, FULLSUBS, _empty));
 }
 
-//Then set specific days here
+//Set Specific Days Here
+global.calendar[0].subs = new SubList(false, true, false, false, false);
+global.calendar[1].subs = new SubList(false, true, true, false, false);
+global.calendar[2].subs = new SubList(true, true, true, false, false);
+global.calendar[3].subs = new SubList(true, true, true, true, true);

@@ -1,1 +1,1 @@
-if (music != undefined) audio_stop_sound(music);
+if (music != undefined) audio_stop_all()
