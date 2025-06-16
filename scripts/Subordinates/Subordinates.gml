@@ -217,6 +217,18 @@ function increase_sub_trust(_key, _val) {
 function increase_sub_fear(_key, _val) { global.subs[$ _key].fear = clamp(global.subs[$ _key].fear+_val, 0, 100) }
 
 function kill_sub(_key) { //Might be easier to destroy instance from respective function
+	//Affecting Stats
+	global.support -= ceil(global.subs[$ _key].popularity/20);
+	var _keys = variable_struct_get_names(global.subs);
+	for (var i = array_length(_keys)-1; i >= 0; --i) {
+		if (check_dead(global.subs[$ _keys[i]])) continue;
+		increase_sub_fear(_keys[i], 2);
+		global.subs[$ _keys[i]].fear_rate--;
+		increase_sub_trust(_keys[i], -2);
+		global.subs[$ _keys[i]].trust_rate--;
+	}
+	
+	//Deleting Sub
 	if (_key == "personal_advisor") global.straight_sub_sprites[global.subs[$ _key].sprite_data.index].used = false;
 	else global.angled_sub_sprites[global.subs[$ _key].sprite_data.index].used = false;
 	global.subs[$ _key] = noone;
